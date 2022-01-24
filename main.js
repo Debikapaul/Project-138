@@ -118,11 +118,11 @@ function move(){
   if (ball.y >= paddle1Y&& ball.y <= paddle1Y + paddle1Height) {
     ball.dx = -ball.dx+0.5; 
   }
-  else{
-    pcscore++;
-    reset();
-    navigator.vibrate(100);
-  }
+  else{ pcscore++;
+        missed.play();
+        reset();
+        navigator.vibrate(100);
+       }
 }
 if(pcscore ==4){
     fill("#FFA500");
